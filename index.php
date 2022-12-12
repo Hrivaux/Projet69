@@ -1,5 +1,11 @@
+<?php
+include ("inc/functions.php");
+
+already_connected();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,8 +37,8 @@
                 <a href="#" class="me-2 menu-search-icon mob-menu"><i class="feather-search text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
                 <button class="nav-menu me-0 ms-2"></button>
 
-                <a href="#" class="header-btn d-none d-lg-block bg-dark fw-500 text-white font-xsss p-3 ms-auto w100 text-center lh-20 rounded-xl" data-toggle="modal" data-target="#Modallogin">Login</a>
-                <a href="#" class="header-btn d-none d-lg-block bg-current fw-500 text-white font-xsss p-3 ms-2 w100 text-center lh-20 rounded-xl" data-toggle="modal" data-target="#Modalregister">Register</a>
+                <a href="#" class="header-btn d-none d-lg-block bg-dark fw-500 text-white font-xsss p-3 ms-auto w100 text-center lh-20 rounded-xl" data-toggle="modal" data-target="#Modallogin">Connexion</a>
+                <a href="#" class="header-btn d-none d-lg-block bg-current fw-500 text-white font-xsss p-3 ms-2 w100 text-center lh-20 rounded-xl" data-toggle="modal" data-target="#Modalregister">Inscription</a>
 
             </div>
             
@@ -45,27 +51,28 @@
                 <div class="card shadow-none border-0 ms-auto me-auto login-card">
                     <div class="card-body rounded-0 text-left">
                         <h2 class="fw-700 display1-size display2-md-size mb-3">Login into <br>your account</h2>
-                        <form>
+                        <form action="inc/actions/login.php" method="post">
                             
                             <div class="form-group icon-input mb-3">
                                 <i class="font-sm ti-email text-grey-500 pe-0"></i>
-                                <input type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Email Address">                        
+                                <input type="email" name="email" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Votre adresse email">                        
                             </div>
                             <div class="form-group icon-input mb-1">
-                                <input type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password">
+                                <input name="password" type="password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Votre mot de passe">
                                 <i class="font-sm ti-lock text-grey-500 pe-0"></i>
                             </div>
                             <div class="form-check text-left mb-3">
                                 <input type="checkbox" class="form-check-input mt-2" id="exampleCheck1">
-                                <label class="form-check-label font-xsss text-grey-500" for="exampleCheck1">Remember me</label>
-                                <a href="forgot.html" class="fw-600 font-xsss text-grey-700 mt-1 float-right">Forgot your Password?</a>
+                                <label class="form-check-label font-xsss text-grey-500" for="exampleCheck1">Se souvenir de moi</label>
+                                <a href="forgot.html" class="fw-600 font-xsss text-grey-700 mt-1 float-right">Vous avez oublié votre mot de passe ?</a>
+                            </div>
+                            <div class="col-sm-12 p-0 text-left">
+                                <button class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 " type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i>SE CONNECTER</button>
+                                <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Vous n'avez pas de compte ?<a href="register.html" class="fw-700 ms-1">Inscription</a></h6>
                             </div>
                         </form>
                          
-                        <div class="col-sm-12 p-0 text-left">
-                            <div class="form-group mb-1"><a href="#" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">Login</a></div>
-                            <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Dont have account <a href="register.html" class="fw-700 ms-1">Register</a></h6>
-                        </div>
+                        
                         <div class="col-sm-12 p-0 text-center mt-2">
                             
                             <h6 class="mb-0 d-inline-block bg-white fw-500 font-xsss text-grey-500 mb-3">Or, Sign in with your social account </h6>
@@ -86,27 +93,27 @@
                 <div class="modal-body p-3 d-flex align-items-center bg-none">
                     <div class="card shadow-none rounded-0 w-100 p-2 pt-3 border-0">
                         <div class="card-body rounded-0 text-left p-3">
-                            <h2 class="fw-700 display1-size display2-md-size mb-4">Login into <br>your account</h2>
-                            <form>
+                            <h2 class="fw-700 display1-size display2-md-size mb-4">Connectez vous <br>à votre compte</h2>
+                            <form action="inc/actions/login.php" method="post">
                                 
                                 <div class="form-group icon-input mb-3">
                                     <i class="font-sm ti-email text-grey-500 pe-0"></i>
-                                    <input type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Email Address">                        
+                                    <input type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Votre adresse email">                        
                                 </div>
                                 <div class="form-group icon-input mb-1">
-                                    <input type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password">
+                                    <input type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Votre mot de passe">
                                     <i class="font-sm ti-lock text-grey-500 pe-0"></i>
                                 </div>
                                 <div class="form-check text-left mb-3">
                                     <input type="checkbox" class="form-check-input mt-2" id="exampleCheck1">
-                                    <label class="form-check-label font-xsss text-grey-500" for="exampleCheck1">Remember me</label>
-                                    <a href="forgot.html" class="fw-600 font-xsss text-grey-700 mt-1 float-right">Forgot your Password?</a>
+                                    <label class="form-check-label font-xsss text-grey-500" for="exampleCheck1">Se souvenir de moi</label>
+                                    <a href="forgot.html" class="fw-600 font-xsss text-grey-700 mt-1 float-right">Mot de passe oublier ?</a>
                                 </div>
                             </form>
                              
                             <div class="col-sm-12 p-0 text-left">
-                                <div class="form-group mb-1"><a href="#" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">Login</a></div>
-                                <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Dont have account <a href="register.html" class="fw-700 ms-1">Register</a></h6>
+                                <div class="form-group mb-1"><a href="#" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">Connection</a></div>
+                                <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Vous m'avez pas de compte ?<a href="register.html" class="fw-700 ms-1">Inscription</a></h6>
                             </div>
                             <div class="col-sm-12 p-0 text-center mt-3 ">
                                 
@@ -177,7 +184,65 @@
 
     <script src="js/plugin.js"></script>
     <script src="js/scripts.js"></script>
-    
+    <div class="modal fade" id="password" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="tbmodal">
+			<h3 style="color:white;">Le mot de passe saisi est incorrect.</h3>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="email" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="tbmodal">
+			<h3 style="color:white;">L'adresse, mail saisie n'existe pas ou est incorrecte.</h3>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="champs" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="tbmodal">
+			<h3 style="color:white;">Merci de remplir la totalité des champs.</h3>
+		</div>
+	</div>
+</div>
+<?php
+	if(isset($_GET['login_err'])) {
+		$errlogin = htmlspecialchars($_GET['login_err']);
+		
+		switch($errlogin)
+		{
+			case 'password':
+?>
+<script>
+$(document).ready(function(){
+    $("#password").modal('show');
+});
+</script>
+<?php }
+switch($errlogin)
+{
+	case 'email':
+?>
+<script>
+$(document).ready(function(){
+    $("#email").modal('show');
+});
+</script>
+<?php }
+switch($errlogin)
+{
+	case 'champs':
+?>
+<script>
+$(document).ready(function(){
+    $("#champs").modal('show');
+});
+</script>
+<?php break; } } ?>	    
+
+
+
+
 </body>
 
 </html>

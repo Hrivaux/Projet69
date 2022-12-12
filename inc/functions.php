@@ -1,5 +1,5 @@
 ﻿<?php
-include("./inc/sql.php"); 
+include("../inc/sql.php"); 
 
 $req_user = $bdd->query("SELECT * FROM utilisateurs WHERE email = '$email'");
 while ($usersession = $req_user->fetch()) {

@@ -1,4 +1,10 @@
+<?php
+@session_start();
+require ('inc/sql.php');
+require ('inc/functions.php');
 
+//connected_only();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,40 +52,41 @@
                 <div class="card shadow-none border-0 ms-auto me-auto login-card">
                     <div class="card-body rounded-0 text-left">
                         <h2 class="fw-700 display1-size display2-md-size mb-4">Créer <br>Ton compte</h2>                        
-                        <form>
+                        <form action="inc/actions/inscription.php" method="post">
                             
                             <div class="form-group icon-input mb-3">
                                 <i class="font-sm ti-user text-grey-500 pe-0"></i>
-                                <input type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ton nom">                        
+                                <input name="nom" type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ton nom">                        
                             </div>
                             <div class="form-group icon-input mb-3">
                                 <i class="font-sm ti-user text-grey-500 pe-0"></i>
-                                <input type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ton prénom">                        
+                                <input name="prenom" type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ton prénom">                        
                             </div>
                             <div class="form-group icon-input mb-3">
                                 <i class="font-sm ti-email text-grey-500 pe-0"></i>
-                                <input type="email" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ton email">                        
+                                <input name="email" type="email" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ton email">                        
                             </div>
                             <div class="form-group icon-input mb-3">
                                 <i class="font-sm ti-email text-grey-500 pe-0"></i>
-                                <input type="date" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ta date de naissance">                        
+                                <input name="age" type="date" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ta date de naissance">                        
                             </div>
                             <div class="form-group icon-input mb-3">
                                 <i class="font-sm ti-email text-grey-500 pe-0"></i>
-                                <input type="tel" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Numéro de téléphone">                        
+                                <input type="tel" name="telephone" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Numéro de téléphone">                        
                             </div>
                             <div class="form-group icon-input mb-3">
-                                <input type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Mot de passe">
+                                <input type="password" name="password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Mot de passe">
                                 <i class="font-sm ti-lock text-grey-500 pe-0"></i>
                             </div>
-                            <div class="form-group icon-input mb-1">
-                                <input type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Confirmation mot de passe">
+                            <!--<div class="form-group icon-input mb-1">
+                                <input type="password" name="password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Confirmation mot de passe">
                                 <i class="font-sm ti-lock text-grey-500 pe-0"></i>
                             </div>
-                            <div class="form-check text-left mb-3">
+                            <!--<div class="form-check text-left mb-3">
                                 <input type="checkbox" class="form-check-input mt-2" id="exampleCheck1">
                                 <label class="form-check-label font-xsss text-grey-500" for="exampleCheck1">Accepter Termes et Conditions</label>
                                 <!-- <a href="#" class="fw-600 font-xsss text-grey-700 mt-1 float-right">Forgot your Password?</a> -->
+                                <button class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 " type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i>SE CONNECTER</button>
                             </div>
                         </form>
                          

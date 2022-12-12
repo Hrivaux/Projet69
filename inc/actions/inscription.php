@@ -1,29 +1,30 @@
 <?php
-require_once('../../global.php');
+require_once('../sql.php');
 // Récupération des champs du formulaire
 
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
-$grade = $_POST['grade'];
 $email = $_POST['email'];
+$age = $_POST['age'];
+$telephone = $_POST['telephone'];
 $password = $_POST['password'];
-$ville = $_POST['ville'];
+/*$ville = $_POST['ville'];
 $adresse = $_POST['adresse'];
-$codepostal = $_POST['codepostal'];
+$codepostal = $_POST['codepostal'];*/
 $pass_hash = password_hash($password, PASSWORD_DEFAULT);
 
-if (!empty($nom) && !empty($prenom) && !empty($grade) && !empty($email) && !empty($password) && !empty($ville) && !empty($adresse) && !empty($codepostal)) {
+if (!empty($nom) && !empty($prenom) && !empty($email) && !empty($age) && !empty($telephone) && !empty($password)) {
 
-    $reponse = $bdd->prepare("INSERT INTO utilisateurs(grade, nom, prenom, email, mot_de_passe, adresse, ville, code_postal, date_embauche, region, created_by) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+    $reponse = $bdd->prepare("INSERT INTO utilisateurs(nom, prenom, email, age, telephone, password) VALUES (?,?,?,?,?,?)");
 
-    $reponse->execute(array($grade, $nom, $prenom, $email, $pass_hash, $adresse, $ville, $codepostal, $today, 'X', $id_encours));
+    $reponse->execute(array($nom, $prenom, $email, $age, $telephone, $pass_hash));
     
     //Logs
-    $req_logs = ("INSERT INTO logs(user_id,type_log,action, date) VALUES ($id_encours, 'Insertion', 'A créé le compte: $nom $prenom ($email)', '$today')");
-    $bdd->exec($req_logs);
-    Header('location: ../../accueil.php?action=success');
+    //$req_logs = ("INSERT INTO logs(user_id,type_log,action, date) VALUES ($id_encours, 'Insertion', 'A créé le compte: $nom $prenom ($email)', '$today')");
+    //$bdd->exec($req_logs);
+    Header('location: ../../default.php?action=success');
 } 
 else
 {
-    Header('location: ../../inscription.php?action=erreur');
+    Header('location: ../../register.php?action=erreur');
 }
