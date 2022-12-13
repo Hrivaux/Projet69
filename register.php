@@ -1,28 +1,11 @@
 <?php
 @session_start();
-require ('inc/sql.php');
-require ('inc/functions.php');
+require('global.php');
 
-//connected_only();
+connected_only();
+
+include('templates/meta.php');
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Elomoas - Online Course and LMS HTML Template</title>
-
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/feather.css">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css"> 
-
-
-
-</head>
 
 <body class="color-theme-blue">
 
@@ -32,13 +15,13 @@ require ('inc/functions.php');
 
         <div class="nav-header bg-transparent shadow-none border-0">
             <div class="nav-top w-100">
-                <a href="default.html"><i class="feather-zap text-success display1-size me-2 ms-0"></i><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">Sociala. </span> </a>
+                <a href="default.php"><i class="feather-zap text-success display1-size me-2 ms-0"></i><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">Sociala. </span> </a>
                 <a href="#" class="mob-menu ms-auto me-2 chat-active-btn"><i class="feather-message-circle text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
-                <a href="default-video.html" class="mob-menu me-2"><i class="feather-video text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
+                <a href="default-video.php" class="mob-menu me-2"><i class="feather-video text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
                 <a href="#" class="me-2 menu-search-icon mob-menu"><i class="feather-search text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
                 <button class="nav-menu me-0 ms-2"></button>
 
-                <a href="index.html" class="header-btn d-none d-lg-block bg-dark fw-500 text-white font-xsss p-3 ms-auto w100 text-center lh-20 rounded-xl" data-toggle="modal" data-target="#Modallogin">Se Connecter</a>
+                <a href="index.php" class="header-btn d-none d-lg-block bg-dark fw-500 text-white font-xsss p-3 ms-auto w100 text-center lh-20 rounded-xl" data-toggle="modal" data-target="#Modallogin">Se Connecter</a>
                
 
             </div>
@@ -92,7 +75,7 @@ require ('inc/functions.php');
                          
                         <div class="col-sm-12 p-0 text-left">
                             <div class="form-group mb-1"><a href="#" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">S'inscrire</a></div>
-                            <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Tu as déjà un compte ?<a href="index.html" class="fw-700 ms-1">Connecte-toi</a></h6>
+                            <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Tu as déjà un compte ?<a href="index.php" class="fw-700 ms-1">Connecte-toi</a></h6>
                         </div>
                          
                     </div>

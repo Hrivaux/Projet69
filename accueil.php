@@ -4,27 +4,8 @@ require('global.php');
 
 connected_only();
 
+include('templates/meta.php');
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>69</title>
-
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/feather.css">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/emoji.css">
-    
-    <link rel="stylesheet" href="css/lightbox.css">
-
-</head>
 
 <body class="color-theme-blue mont-font">
 
@@ -851,11 +832,11 @@ connected_only();
         <!-- right chat -->
         
         <div class="app-footer border-0 shadow-lg bg-primary-gradiant">
-            <a href="default.html" class="nav-content-bttn nav-center"><i class="feather-home"></i></a>
-            <a href="default-video.html" class="nav-content-bttn"><i class="feather-package"></i></a>
-            <a href="default-live-stream.html" class="nav-content-bttn" data-tab="chats"><i class="feather-layout"></i></a>            
-            <a href="shop-2.html" class="nav-content-bttn"><i class="feather-layers"></i></a>
-            <a href="default-settings.html" class="nav-content-bttn"><img src="https://via.placeholder.com/50x50.png" alt="user" class="w30 shadow-xss"></a>
+            <a href="default.php" class="nav-content-bttn nav-center"><i class="feather-home"></i></a>
+            <a href="default-video.php" class="nav-content-bttn"><i class="feather-package"></i></a>
+            <a href="default-live-stream.php" class="nav-content-bttn" data-tab="chats"><i class="feather-layout"></i></a>            
+            <a href="shop-2.php" class="nav-content-bttn"><i class="feather-layers"></i></a>
+            <a href="default-settings.php" class="nav-content-bttn"><img src="https://via.placeholder.com/50x50.png" alt="user" class="w30 shadow-xss"></a>
         </div>
 
         <div class="app-header-search">

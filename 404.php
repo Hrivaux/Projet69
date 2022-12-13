@@ -1,6 +1,23 @@
-<div class="nav-header bg-white shadow-xs border-0">
+<?php
+@session_start();
+require('global.php');
+
+connected_only();
+
+include('templates/meta.php');
+?>
+
+<body class="color-theme-blue mont-font">
+
+    <div class="preloader"></div>
+
+    
+    <div class="main-wrapper">
+
+        <!-- navigation top-->
+        <div class="nav-header bg-white shadow-xs border-0">
             <div class="nav-top">
-                <a href="acceuil.php"><i class="feather-zap text-success display1-size me-2 ms-0"></i><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">69 La Trik </span> </a>
+                <a href="default.php"><i class="feather-zap text-success display1-size me-2 ms-0"></i><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">Sociala. </span> </a>
                 <a href="#" class="mob-menu ms-auto me-2 chat-active-btn"><i class="feather-message-circle text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
                 <a href="default-video.php" class="mob-menu me-2"><i class="feather-video text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
                 <a href="#" class="me-2 menu-search-icon mob-menu"><i class="feather-search text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
@@ -13,13 +30,13 @@
                     <input type="text" placeholder="Start typing to search.." class="bg-grey border-0 lh-32 pt-2 pb-2 ps-5 pe-3 font-xssss fw-500 rounded-xl w350 theme-dark-bg">
                 </div>
             </form>
-            <a href="accueil.php" class="p-2 text-center ms-3 menu-icon center-menu-icon"><i class="feather-home font-lg alert-primary btn-round-lg theme-dark-bg text-current "></i></a>
+            <a href="default.php" class="p-2 text-center ms-3 menu-icon center-menu-icon"><i class="feather-home font-lg alert-primary btn-round-lg theme-dark-bg text-current "></i></a>
             <a href="default-storie.php" class="p-2 text-center ms-0 menu-icon center-menu-icon"><i class="feather-zap font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i></a>
             <a href="default-video.php" class="p-2 text-center ms-0 menu-icon center-menu-icon"><i class="feather-video font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i></a>
             <a href="default-group.php" class="p-2 text-center ms-0 menu-icon center-menu-icon"><i class="feather-user font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i></a>
             <a href="shop-2.php" class="p-2 text-center ms-0 menu-icon center-menu-icon"><i class="feather-shopping-bag font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i></a>
 
-            <a href="#" class="p-2 text-center ms-auto menu-icon" id="dropdownMenu3" data-bs-toggle="dropdown" aria-expanded="false"><span class="dot-count bg-warning"></span><i class="feather-bell font-xl text-current"></i></a>
+            <a href="#" class="p-2 text-center ms-auto menu-icon" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="dot-count bg-warning"></span><i class="feather-bell font-xl text-current"></i></a>
             <div class="dropdown-menu dropdown-menu-end p-4 rounded-3 border-0 shadow-lg" aria-labelledby="dropdownMenu3">
                 
                 <h4 class="fw-700 font-xss mb-4">Notification</h4>
@@ -150,6 +167,75 @@
             </div>
             
 
-            <a href="author-page.php" class="p-0 ms-3 menu-icon"><img src="https://via.placeholder.com/50x50.png" alt="user" class="w40 mt--1"></a>
+            <a href="default-settings.php" class="p-0 ms-3 menu-icon"><img src="https://via.placeholder.com/50x50.png" alt="user" class="w40 mt--1"></a>
             
         </div>
+        <!-- navigation top -->
+
+        
+
+        <!-- main content -->
+        <div class="main-content pt-0 bg-white ps-0 pe-0">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8 text-center default-page vh-100 align-items-center d-flex">
+                        <div class="card border-0 text-center d-block p-0">
+                            <img src="https://via.placeholder.com/200x250.png" alt="icon" class="w200 mb-4 ms-auto me-auto pt-md-5">
+                            <h1 class="fw-700 text-grey-900 display3-size display4-md-size">Oops! It looks like you're lost.</h1>
+                            <p class="text-grey-500 font-xsss">The page you're looking for isn't available. Try to search again or use the go to.</p>
+                            <a href="index.php" class="p-3 w175 bg-current text-white d-inline-block text-center fw-600 font-xssss rounded-3 text-uppercase ls-3">Home Page</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!-- main content -->
+
+        
+        <div class="app-footer border-0 shadow-lg bg-primary-gradiant">
+            <a href="default.php" class="nav-content-bttn nav-center"><i class="feather-home"></i></a>
+            <a href="default-follower.php" class="nav-content-bttn"><i class="feather-package"></i></a>
+            <a href="default-live-stream.php" class="nav-content-bttn" data-tab="chats"><i class="feather-layout"></i></a>            
+            <a href="shop-2.php" class="nav-content-bttn"><i class="feather-layers"></i></a>
+            <a href="default-settings.php" class="nav-content-bttn"><img src="https://via.placeholder.com/50x50.png" alt="user" class="w30 shadow-xss"></a>
+        </div>
+
+        <div class="app-header-search">
+            <form class="search-form">
+                <div class="form-group searchbox mb-0 border-0 p-1">
+                    <input type="text" class="form-control border-0" placeholder="Search...">
+                    <i class="input-icon">
+                        <ion-icon name="search-outline" role="img" class="md hydrated" aria-label="search outline"></ion-icon>
+                    </i>
+                    <a href="#" class="ms-1 mt-1 d-inline-block close searchbox-close">
+                        <i class="ti-close font-xs"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+    </div> 
+
+
+    
+    <script src="js/plugin.js"></script>
+    <script src="js/countdown.js"></script> 
+    <script src="js/scripts.js"></script>
+
+    <script>
+        $(function () {
+
+           $('.timer').countdown('2021/6/31', function(event) {
+              var $this = $(this).php(event.strftime(''
+                // + '<span>%w</span> weeks '
+                + '<div class="time-count"><span class="text-time">%d</span> <span class="text-day">Day</span></div> '
+                + '<div class="time-count"><span class="text-time">%H</span> <span class="text-day">Hours</span> </div> '
+                + '<div class="time-count"><span class="text-time">%M</span> <span class="text-day">Min</span> </div> '
+                + '<div class="time-count"><span class="text-time">%S</span> <span class="text-day">Sec</span> </div> '));
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
