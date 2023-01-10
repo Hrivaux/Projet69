@@ -46,12 +46,20 @@ include('templates/meta.php');
                                 <input name="prenom" type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ton prénom">                        
                             </div>
                             <div class="form-group icon-input mb-3">
+                                <i class="font-sm ti-user text-grey-500 pe-0"></i>
+                                <input name="pseudo" type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ton pseudo">                        
+                            </div>
+                            <div class="form-group icon-input mb-3">
                                 <i class="font-sm ti-email text-grey-500 pe-0"></i>
                                 <input name="email" type="email" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ton email">                        
                             </div>
                             <div class="form-group icon-input mb-3">
                                 <i class="font-sm ti-email text-grey-500 pe-0"></i>
-                                <input name="age" type="date" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ta date de naissance">                        
+                                <input name="date_naissance" type="date" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Ta date de naissance">                        
+                            </div>
+                            <div class="form-group icon-input mb-3">
+                            <input type="radio" name="sexe" value="0"> une Femme
+                            <input type="radio" name="sexe" value="1"> un Homme<br>
                             </div>
                             <div class="form-group icon-input mb-3">
                                 <i class="font-sm ti-email text-grey-500 pe-0"></i>

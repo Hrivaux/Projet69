@@ -1,7 +1,7 @@
 ﻿<?php
 include("./inc/sql.php"); 
 
-$req_user = $bdd->query("SELECT * FROM utilisateurs WHERE email = '$email'");
+$req_user = $bdd->query("SELECT * FROM users WHERE email = '$email'");
 while ($usersession = $req_user->fetch()) {
 	
 	$prenomnom = $usersession['prenom']." ".$usersession['nom'];
