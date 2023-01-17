@@ -17,7 +17,7 @@ $pass_hash = password_hash($password, PASSWORD_DEFAULT);
 
 if (!empty($nom) || !empty($prenom) || !empty($email) || !empty($date_naissance) || !empty($telephone) || !empty($password) || !empty($sexe) || !empty($pseudo)) {
 
-    $reponse = $bdd->prepare("INSERT INTO utilisateurs(nom, prenom, email, age, telephone, password) VALUES (?,?,?,?,?,?)");
+    $reponse = $bdd->prepare("INSERT INTO users(nom, prenom, email, date_naissance, telephone, password, sexe, pseudo) VALUES (?,?,?,?,?,?,?,?)");
 
     $reponse->execute(array($nom, $prenom, $email, $date_naissance, $telephone, $pass_hash, $sexe, $pseudo));
     
