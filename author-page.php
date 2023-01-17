@@ -91,8 +91,8 @@ $nb_publicationducompte = $data['nb'];
                         <div class="col-xl-4 col-xxl-3 col-lg-4 pe-0">
                             <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3">
                                 <div class="card-body d-block p-4">
-                                    <h4 class="fw-700 mb-3 font-xsss text-grey-900">About</h4>
-                                    <p class="fw-500 text-grey-500 lh-24 font-xssss mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus</p>
+                                    <h4 class="fw-700 mb-3 font-xsss text-grey-900">Description</h4>
+                                    <p class="fw-500 text-grey-500 lh-24 font-xssss mb-0"><?php echo $profilconnecte['description']; ?></p>
                                 </div>
                                 <div class="card-body border-top-xs d-flex">
                                     <i class="feather-lock text-grey-500 me-3 font-lg"></i>
@@ -105,7 +105,7 @@ $nb_publicationducompte = $data['nb'];
                                 </div>
                                 <div class="card-body d-flex pt-0">
                                     <i class="feather-map-pin text-grey-500 me-3 font-lg"></i>
-                                    <h4 class="fw-700 text-grey-900 font-xssss mt-1">Flodia, Austia </h4>
+                                    <h4 class="fw-700 text-grey-900 font-xssss mt-1"><?php echo $profilconnecte['ville']; ?>, <?php echo $profilconnecte['departement']; ?></h4>
                                 </div>
                                 <div class="card-body d-flex pt-0">
                                     <i class="feather-users text-grey-500 me-3 font-lg"></i>
@@ -191,11 +191,21 @@ $nb_publicationducompte = $data['nb'];
                                 </div>
                             </div>
 
+                      
+<?php
+$requete = $bdd->prepare("SELECT * FROM publication");
+$requete->execute();
+$reqpubli = $requete->fetch();
+if (!empty($resultat))
+{
+    foreach ($resultat as $publication)
+    {
+?>
 
                             <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-3">
                                 <div class="card-body p-0 d-flex">
                                     <figure class="avatar me-3"><img src="https://via.placeholder.com/50x50.png" alt="image" class="shadow-sm rounded-circle w45"></figure>
-                                    <h4 class="fw-700 text-grey-900 font-xssss mt-1">Surfiya Zakir  <span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">3 hour ago</span></h4>
+                                    <h4 class="fw-700 text-grey-900 font-xssss mt-1"><?php echo $profilconnecte['pseudo']; ?>  <span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">3 hour ago</span></h4>
                                     <a href="#" class="ms-auto" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false"><i class="ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss"></i></a>
                                     <div class="dropdown-menu dropdown-menu-end p-4 rounded-xxl border-0 shadow-lg" aria-labelledby="dropdownMenu2">
                                         <div class="card-body p-0 d-flex">
@@ -217,7 +227,7 @@ $nb_publicationducompte = $data['nb'];
                                     </div>
                                 </div>
                                 <div class="card-body p-0 me-lg-5">
-                                    <p class="fw-500 text-grey-500 lh-26 font-xssss w-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus <a href="#" class="fw-600 text-primary ms-2">See more</a></p>
+                                    <p class="fw-500 text-grey-500 lh-26 font-xssss w-100"><?php echo $publication['libelle_publication']; ?><a href="#" class="fw-600 text-primary ms-2">See more</a></p>
                                 </div>
                                 <div class="card-body d-block p-0">
                                     <div class="row ps-2 pe-2">
@@ -268,6 +278,15 @@ $nb_publicationducompte = $data['nb'];
                                     </div>
                                 </div>
                             </div>
+                            <?php
+}
+}
+else
+{
+    echo "Vous n'avez pas de publication";
+}
+?>
+                            
                             
                             <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-0">
                                 <div class="card-body p-0 d-flex">
