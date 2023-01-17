@@ -7,7 +7,7 @@
 		$email = htmlspecialchars($_POST['email']);
 		$password = htmlspecialchars($_POST['password']);
 		
-		$check = $bdd->prepare('SELECT email, password, prenom FROM utilisateurs WHERE email = ?');
+		$check = $bdd->prepare('SELECT email, password, prenom FROM users WHERE email = ?');
 		$check->execute(array($email));
 		$data = $check->fetch();
 		$row = $check->rowCount();

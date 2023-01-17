@@ -11,7 +11,7 @@
 if (isset($_SESSION['user']))
 {
     $email = $_SESSION['user'];
-    $sql = $bdd->query("SELECT * FROM utilisateurs WHERE email= '$email' LIMIT 1");
+    $sql = $bdd->query("SELECT * FROM users WHERE email= '$email' LIMIT 1");
     $user = $sql->fetch(PDO::FETCH_ASSOC);
 
     $prenomnom = $user['prenom'] . " " . $user['nom'];
