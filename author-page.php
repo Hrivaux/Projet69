@@ -5,6 +5,11 @@ require('global.php');
 connected_only();
 
 include('templates/meta.php');
+
+// Compteur nombre de publication 
+$nbpubli = $bdd->query("SELECT count(*) as nb FROM publication WHERE user_id = $id_encours");
+$data = $nbpubli->fetch();
+$nb_publicationducompte = $data['nb'];
 ?>
 
 <body class="color-theme-blue mont-font">
@@ -24,7 +29,7 @@ include('templates/meta.php');
         <!-- main content -->
         <div class="main-content right-chat-active">
         <?php
-                                                    $requete = $bdd->prepare("SELECT * FROM utilisateurs WHERE id = $id_encours");
+                                                    $requete = $bdd->prepare("SELECT * FROM users WHERE id = $id_encours");
                                                     $requete->execute();
                                                     $profilconnecte = $requete->fetch();
                                                     ?>
@@ -40,7 +45,7 @@ include('templates/meta.php');
                                     <h4 class="font-xs ls-1 fw-700 text-grey-900"><?php echo $prenomnom ?><span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500"><?php echo $profilconnecte['pseudo']; ?></span></h4>
                                     
                                     <div class="d-flex align-items-center pt-0 position-absolute left-15 top-10 mt-4 ms-2">
-                                        <h4 class="font-xsssss text-center d-none d-lg-block text-grey-500 fw-600 ms-2 me-2"><b class="text-grey-900 mb-1 font-sm fw-700 d-inline-block ls-3 text-dark">456 </b> Posts</h4>
+                                        <h4 class="font-xsssss text-center d-none d-lg-block text-grey-500 fw-600 ms-2 me-2"><b class="text-grey-900 mb-1 font-sm fw-700 d-inline-block ls-3 text-dark"><?php echo $nb_publicationducompte; ?></b> Poste</h4>
                                         <h4 class="font-xsssss text-center d-none d-lg-block text-grey-500 fw-600 ms-2 me-2"><b class="text-grey-900 mb-1 font-sm fw-700 d-inline-block ls-3 text-dark">2.1k </b> Followers</h4>
                                         <h4 class="font-xsssss text-center d-none d-lg-block text-grey-500 fw-600 ms-2 me-2"><b class="text-grey-900 mb-1 font-sm fw-700 d-inline-block ls-3 text-dark">32k </b> Follow</h4>
                                     </div>
