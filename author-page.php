@@ -196,11 +196,11 @@ $nb_publicationducompte = $data['nb'];
 $requete = $bdd->prepare("SELECT * FROM publication");
 $requete->execute();
 $reqpubli = $requete->fetch();
-if (!empty($resultat))
-{
-    foreach ($resultat as $publication)
-    {
-?>
+//if (!empty($resultat))
+//{
+  //  foreach ($resultat as $publication)
+    //{
+//?>
 
                             <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-3">
                                 <div class="card-body p-0 d-flex">
@@ -227,7 +227,7 @@ if (!empty($resultat))
                                     </div>
                                 </div>
                                 <div class="card-body p-0 me-lg-5">
-                                    <p class="fw-500 text-grey-500 lh-26 font-xssss w-100"><?php echo $publication['libelle_publication']; ?><a href="#" class="fw-600 text-primary ms-2">See more</a></p>
+                                    <p class="fw-500 text-grey-500 lh-26 font-xssss w-100"><?php echo $reqpubli['libelle_publication']; ?><a href="#" class="fw-600 text-primary ms-2">See more</a></p>
                                 </div>
                                 <div class="card-body d-block p-0">
                                     <div class="row ps-2 pe-2">
@@ -279,12 +279,12 @@ if (!empty($resultat))
                                 </div>
                             </div>
                             <?php
-}
-}
-else
-{
-    echo "Vous n'avez pas de publication";
-}
+//}
+//}
+//else
+//{
+  //  echo "Vous n'avez pas de publication";
+//}
 ?>
                             
                             
@@ -456,7 +456,18 @@ else
                     </div>
                 </div>
                 <!-- loader wrapper -->
+                <?php
+$requete = ("SELECT * FROM users ORDER BY id DESC");
 
+$reqfriend = $bdd->prepare($requete);
+$reqfriend->execute();
+
+$resultat = $reqmfriend->fetchAll();
+if (!empty($resultat))
+{
+    foreach ($resultat as $friend)
+    {
+?>
                 <div class="section full pe-3 ps-4 pt-4 position-relative feed-body">
                     <h4 class="font-xsssss text-grey-500 text-uppercase fw-700 ls-3">CONTACTS</h4>
                     <ul class="list-group list-group-flush">
@@ -469,6 +480,7 @@ else
                             </h3>
                             <span class="badge badge-primary text-white badge-pill fw-500 mt-0">2</span>
                         </li>
+                        <!--
                         <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
                             <figure class="avatar float-left mb-0 me-2">
                                 <img src="https://via.placeholder.com/50x50.png" alt="image" class="w35">
@@ -534,6 +546,15 @@ else
                         </li>
                         
                     </ul>
+                    <?php
+}
+}
+else
+{
+    echo "Aucun médecin n'a été créé";
+}
+?>
+
                 </div>
                 <div class="section full pe-3 ps-4 pt-4 pb-4 position-relative feed-body">
                     <h4 class="font-xsssss text-grey-500 text-uppercase fw-700 ls-3">GROUPS</h4>
